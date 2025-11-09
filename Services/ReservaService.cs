@@ -45,6 +45,19 @@ namespace reservas_api.Services
             }
         }
 
+        public async Task CancelarReserva(int idReserva,int idUsuario)
+        {
+            string query = "sp_CancelarReserva";
+            var parametros = new DynamicParameters();
+            parametros.Add("@ReservaId", idReserva, DbType.Int32);
+            parametros.Add("@UsuarioId", idUsuario, DbType.Int32);
+
+            using(var con = new SqlConnection(cadenaSql))
+            {
+                await con.ExecuteAsync(query, parametros, commandType: CommandType.StoredProcedure);
+            }
+        }
+
 
     }
 }

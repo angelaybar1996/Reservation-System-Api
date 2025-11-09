@@ -28,5 +28,17 @@ namespace reservas_api.Services
                 return vuelos;
             }
         }
+
+        public async Task CancelarVuelo(int id)
+        {
+            string query = "sp_CancelarVuelo";
+            var parametros = new DynamicParameters();
+            parametros.Add("@VueloId", id, DbType.Int32);
+
+            using (var con = new SqlConnection(cadenaSql))
+            {
+                await con.ExecuteAsync(query, parametros, commandType: CommandType.StoredProcedure);
+            }
+        }
     }
 }
