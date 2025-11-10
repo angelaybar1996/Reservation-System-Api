@@ -1,4 +1,4 @@
-﻿namespace reservas_api.Models
+﻿namespace reservas_api.Entities
 {
     public class Usuario
     {

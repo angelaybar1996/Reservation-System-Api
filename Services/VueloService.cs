@@ -1,4 +1,4 @@
-﻿using reservas_api.Models;
+﻿using reservas_api.Entities;
 using Dapper;
 using Microsoft.Data.SqlClient;
 using System.Data;
