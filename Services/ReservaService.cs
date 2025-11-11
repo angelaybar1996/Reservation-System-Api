@@ -1,63 +1,51 @@
-﻿using reservas_api.Entities;
-using Dapper;
-using Microsoft.Data.SqlClient;
-using System.Data;
+﻿using reservas_api.Contracts;
+using reservas_api.Dtos;
+using reservas_api.Entities;
+
 
 
 namespace reservas_api.Services
 {
-    public class ReservaService
+    public class ReservaService : IReservaService
     {
-        private readonly IConfiguration _configuration;
-        private readonly string cadenaSql;
 
-        public ReservaService(IConfiguration configuration)
+        private readonly IReservaRepository _reservaRepository;
+        private readonly IUsuarioRepository _usuarioRepository;
+        private readonly IVueloRepository _vueloRepository;
+        public ReservaService(
+            IReservaRepository reservaRepository,
+            IUsuarioRepository usuarioRepository,
+            IVueloRepository vueloRepository)
         {
-            _configuration = configuration;
-            cadenaSql=configuration.GetConnectionString("CadenaSQL")!;
+            _reservaRepository = reservaRepository;
+            _usuarioRepository = usuarioRepository;
+            _vueloRepository = vueloRepository;
         }
 
-        public async Task <Reserva> GetReservas(int id)
+        public async Task<List<ReservaDetalleDto>> GetReservasDetallePorUsuario(int usuarioId)
         {
-            string query = "sp_ListarReservasPorUsuario";
-            var parametros = new DynamicParameters();
-            parametros.Add("@UsuarioId", id,DbType.Int32);
+            var reservas = await _reservaRepository.GetReservas(usuarioId);
+            var usuario = await _usuarioRepository.GetUsuario(usuarioId);
+            var vuelos = await _vueloRepository.GetVuelos(usuarioId);
 
-            using (var con = new SqlConnection(cadenaSql))
+            var resultado = reservas.Select(r =>
             {
-                var reservas= await con.QueryFirstOrDefaultAsync<Reserva>(query, parametros, commandType: CommandType.StoredProcedure);
-                return reservas;
-            }
+                var vuelo = vuelos.FirstOrDefault(v => v.VueloId == r.VueloId);
+
+                return new ReservaDetalleDto
+                {
+                    ReservaId = r.ReservaId,
+                    Cliente = $"{usuario?.Nombre} {usuario?.Apellido}",
+                    Destino = vuelo?.Destino ?? "N/A",
+                    FechaReserva = r.FechaReserva,
+                    Estado = r.Estado ?? "Desconocido"
+                };
+            }).ToList();
+
+            return resultado;
         }
-
-        public async Task<string> CrearReserva (Reserva reserva)
-        {
-            string query = "sp_CrearReserva";
-            var parametros = new DynamicParameters();
-            parametros.Add("@UsuarioId", reserva.UsuarioId, DbType.Int32);
-            parametros.Add("@VueloId", reserva.VueloId, DbType.Int32);
-            parametros.Add("@Mensaje",dbType: DbType.String, direction: ParameterDirection.Output, size: 100);
-            
-            using (var con = new SqlConnection(cadenaSql))
-            {
-                await con.ExecuteAsync(query, parametros, commandType: CommandType.StoredProcedure);
-                return parametros.Get<string>("@Mensaje");
-            }
-        }
-
-        public async Task CancelarReserva(int idReserva,int idUsuario)
-        {
-            string query = "sp_CancelarReserva";
-            var parametros = new DynamicParameters();
-            parametros.Add("@ReservaId", idReserva, DbType.Int32);
-            parametros.Add("@UsuarioId", idUsuario, DbType.Int32);
-
-            using(var con = new SqlConnection(cadenaSql))
-            {
-                await con.ExecuteAsync(query, parametros, commandType: CommandType.StoredProcedure);
-            }
-        }
-
-
     }
+
+
+    
 }

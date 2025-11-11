@@ -1,7 +1,10 @@
-﻿namespace reservas_api.Contracts
+﻿using reservas_api.Entities;
+
+namespace reservas_api.Contracts
 {
     public interface IVueloRepository
     {
-        string Get(string id);
+        Task<List<Vuelo>> GetVuelos(int id);
+        Task CancelarVuelo(int id);
     }
 }
