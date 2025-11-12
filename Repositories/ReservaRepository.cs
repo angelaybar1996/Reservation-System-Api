@@ -22,10 +22,9 @@ namespace reservas_api.Repositories
             string query = "sp_ListarReservasPorUsuario";
             var parametros = new DynamicParameters();
             parametros.Add("@UsuarioId", id, DbType.Int32);
-
             using (var con = new SqlConnection(cadenaSql))
             {
-                var reservas = await con.QueryAsync<Reserva>(query, commandType: CommandType.StoredProcedure);
+                var reservas = await con.QueryAsync<Reserva>(query,parametros, commandType: CommandType.StoredProcedure);
                 return reservas.ToList();
             }
         }
@@ -44,7 +43,7 @@ namespace reservas_api.Repositories
             }
         }
 
-        public async Task CancelarReserva(int idReserva, int idUsuario)
+        public async Task BajarReserva(int idReserva, int idUsuario)
         {
             string query = "sp_CancelarReserva";
             var parametros = new DynamicParameters();

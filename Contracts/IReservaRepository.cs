@@ -7,7 +7,7 @@ namespace reservas_api.Contracts
     {
         Task<List<Reserva>> GetReservas(int id);
         Task<string> CrearReserva(Reserva reserva);
-        Task CancelarReserva(int idReserva, int idUsuario);
+        Task BajarReserva(int idReserva, int idUsuario);
 
     }
 }

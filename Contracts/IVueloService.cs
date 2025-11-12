@@ -4,6 +4,7 @@ namespace reservas_api.Contracts
 {
     public interface IVueloService
     {
-        Task<List<Vuelo>> GetVuelosPorAerolinea(int id);
+        Task<List<Vuelo>> ObtenerVuelos();
+        Task CancelarVuelo(int id);
     }
 }

@@ -15,9 +15,14 @@ namespace reservas_api.Services
             _VueloRepository = vueloRepository;
         }
 
-        public async Task<List<Vuelo>> GetVuelosPorAerolinea(int id)
+        public async Task<List<Vuelo>> ObtenerVuelos()
         {
-            return await _VueloRepository.GetVuelos(id);
+            return await _VueloRepository.GetVuelos();
+        }
+
+        public async Task CancelarVuelo(int id)
+        {
+            await _VueloRepository.BajarVuelo(id);
         }
     }
 }

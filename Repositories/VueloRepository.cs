@@ -17,19 +17,17 @@ namespace reservas_api.Repositories
             cadenaSql = _configuration.GetConnectionString("CadenaSQL")!;
         }
 
-        public async Task<List<Vuelo>> GetVuelos(int id)
+        public async Task<List<Vuelo>> GetVuelos()
         {
-            string query = "sp_ListarVuelosPorAerolinea";
-            var parametros = new DynamicParameters();
-            parametros.Add("@AerolineaId", id, DbType.Int32);
+            string query = "sp_ListarVuelos";
             using (var con = new SqlConnection(cadenaSql))
             {
-                var vuelos = await con.QueryAsync<Vuelo>(query, parametros, commandType: CommandType.StoredProcedure);
+                var vuelos = await con.QueryAsync<Vuelo>(query,commandType: CommandType.StoredProcedure);
                 return vuelos.ToList();
             }
         }
 
-        public async Task CancelarVuelo(int id)
+        public async Task BajarVuelo(int id)
         {
             string query = "sp_CancelarVuelo";
             var parametros = new DynamicParameters();

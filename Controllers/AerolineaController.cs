@@ -17,8 +17,8 @@ namespace reservas_api.Controllers
         }
 
         [HttpGet]
-        [Route("GetAerolineas")]
-        public async Task<IActionResult>GetAerolineas()
+        [Route("ObtenerAerolineas")]
+        public async Task<IActionResult>ObtenerAerolineas()
         {
             var aerolineas=await _service.ObtenerAerolineas();
             return Ok(aerolineas);

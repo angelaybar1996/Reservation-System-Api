@@ -23,8 +23,11 @@ namespace reservas_api.Repositories
 
             using (var con = new SqlConnection(cadenaSql))
             {
+                var parametros = new DynamicParameters();
+                parametros.Add("@id", id, DbType.Int32);
+
                 var usuario = await con.QueryFirstOrDefaultAsync<Usuario>(
-                 query,new { UsuarioId = id },commandType: CommandType.Text);
+                 query,parametros,commandType: CommandType.Text);
 
                 return usuario;
             }

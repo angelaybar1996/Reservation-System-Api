@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using reservas_api.Contracts;
+using reservas_api.Entities;
 
 namespace reservas_api.Controllers
 {
@@ -16,11 +17,27 @@ namespace reservas_api.Controllers
         }
 
         [HttpGet]
-        [Route("GetReservasPorUsuario")]
+        [Route("Obtener/{id}")]
         public async Task<IActionResult> GetReversasPorUsuario(int id)
         {
             var reservas = await _service.GetReservasDetallePorUsuario(id);
             return Ok(reservas);
+        }
+
+        [HttpPost]
+        [Route("Realizar")]
+        public async Task<IActionResult> RealizarReserva(Reserva reserva)
+        {
+            var retorno = await _service.RealizarReserva(reserva);
+            return Ok(retorno);
+        }
+
+        [HttpPost]
+        [Route("Cancelar/{idReserva}/{idUsuario}")]
+        public async Task<IActionResult> CancelarReserva(int idReserva, int idUsuario)
+        {
+            await _service.CancelarReserva(idReserva,idUsuario);
+            return Ok();
         }
     }
 }

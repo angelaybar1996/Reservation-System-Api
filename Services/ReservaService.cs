@@ -25,24 +25,18 @@ namespace reservas_api.Services
         public async Task<List<ReservaDetalleDto>> GetReservasDetallePorUsuario(int usuarioId)
         {
             var reservas = await _reservaRepository.GetReservas(usuarioId);
-            var usuario = await _usuarioRepository.GetUsuario(usuarioId);
-            var vuelos = await _vueloRepository.GetVuelos(usuarioId);
+            
+            return reservas.ToList();
+        }
 
-            var resultado = reservas.Select(r =>
-            {
-                var vuelo = vuelos.FirstOrDefault(v => v.VueloId == r.VueloId);
+        public async Task<string> RealizarReserva(Reserva reserva)
+        {
+            return await _reservaRepository.CrearReserva(reserva);
+        }
 
-                return new ReservaDetalleDto
-                {
-                    ReservaId = r.ReservaId,
-                    Cliente = $"{usuario?.Nombre} {usuario?.Apellido}",
-                    Destino = vuelo?.Destino ?? "N/A",
-                    FechaReserva = r.FechaReserva,
-                    Estado = r.Estado ?? "Desconocido"
-                };
-            }).ToList();
-
-            return resultado;
+        public async Task CancelarReserva(int reservaId, int usuarioId)
+        {
+            await _reservaRepository.BajarReserva(reservaId, usuarioId);
         }
     }
 
