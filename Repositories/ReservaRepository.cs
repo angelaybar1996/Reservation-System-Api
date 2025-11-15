@@ -1,5 +1,6 @@
 ﻿using reservas_api.Contracts;
 using reservas_api.Entities;
+using reservas_api.Dtos;
 using Dapper;
 using Microsoft.Data.SqlClient;
 using System.Data;
@@ -17,14 +18,14 @@ namespace reservas_api.Repositories
             cadenaSql = configuration.GetConnectionString("CadenaSQL")!;
         }
 
-        public async Task<List<Reserva>> GetReservas(int id)
+        public async Task<List<ReservaDetalleDto>> GetReservas(int id)
         {
             string query = "sp_ListarReservasPorUsuario";
             var parametros = new DynamicParameters();
             parametros.Add("@UsuarioId", id, DbType.Int32);
             using (var con = new SqlConnection(cadenaSql))
             {
-                var reservas = await con.QueryAsync<Reserva>(query,parametros, commandType: CommandType.StoredProcedure);
+                var reservas = await con.QueryAsync<ReservaDetalleDto>(query,parametros, commandType: CommandType.StoredProcedure);
                 return reservas.ToList();
             }
         }
