@@ -28,7 +28,11 @@ namespace reservas_api.Controllers
         public async Task<IActionResult> CancelarVuelo(int id)
         {
             await _service.CancelarVuelo(id);
-            return Ok();
+            return Ok(new
+            {
+                success = true,
+                message = "El vuelo fue cancelado correctamente."
+            });
         }
 
 

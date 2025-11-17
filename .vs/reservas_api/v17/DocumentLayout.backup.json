@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\al_aybar\\Documents\\sistema-reserva\\reservas_api\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9A77D033-147E-439D-A829-8B9D11459EB1}|reservas_api.csproj|c:\\users\\al_aybar\\documents\\sistema-reserva\\reservas_api\\repositories\\aerolinearepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A77D033-147E-439D-A829-8B9D11459EB1}|reservas_api.csproj|solutionrelative:repositories\\aerolinearepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A77D033-147E-439D-A829-8B9D11459EB1}|reservas_api.csproj|c:\\users\\al_aybar\\documents\\sistema-reserva\\reservas_api\\contracts\\ireservarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A77D033-147E-439D-A829-8B9D11459EB1}|reservas_api.csproj|solutionrelative:contracts\\ireservarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9A77D033-147E-439D-A829-8B9D11459EB1}|reservas_api.csproj|c:\\users\\al_aybar\\documents\\sistema-reserva\\reservas_api\\repositories\\reservarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9A77D033-147E-439D-A829-8B9D11459EB1}|reservas_api.csproj|solutionrelative:repositories\\reservarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A77D033-147E-439D-A829-8B9D11459EB1}|reservas_api.csproj|c:\\users\\al_aybar\\documents\\sistema-reserva\\reservas_api\\services\\reservaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9A77D033-147E-439D-A829-8B9D11459EB1}|reservas_api.csproj|solutionrelative:services\\reservaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A77D033-147E-439D-A829-8B9D11459EB1}|reservas_api.csproj|c:\\users\\al_aybar\\documents\\sistema-reserva\\reservas_api\\contracts\\ireservaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9A77D033-147E-439D-A829-8B9D11459EB1}|reservas_api.csproj|solutionrelative:contracts\\ireservaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A77D033-147E-439D-A829-8B9D11459EB1}|reservas_api.csproj|c:\\users\\al_aybar\\documents\\sistema-reserva\\reservas_api\\contracts\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9A77D033-147E-439D-A829-8B9D11459EB1}|reservas_api.csproj|solutionrelative:contracts\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,55 +30,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ReservaService.cs",
-              "DocumentMoniker": "C:\\Users\\al_aybar\\Documents\\sistema-reserva\\reservas_api\\Services\\ReservaService.cs",
-              "RelativeDocumentMoniker": "Services\\ReservaService.cs",
-              "ToolTip": "C:\\Users\\al_aybar\\Documents\\sistema-reserva\\reservas_api\\Services\\ReservaService.cs",
-              "RelativeToolTip": "Services\\ReservaService.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwB0AAAAIAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "AerolineaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\al_aybar\\Documents\\sistema-reserva\\reservas_api\\Repositories\\AerolineaRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\AerolineaRepository.cs",
+              "ToolTip": "C:\\Users\\al_aybar\\Documents\\sistema-reserva\\reservas_api\\Repositories\\AerolineaRepository.cs",
+              "RelativeToolTip": "Repositories\\AerolineaRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-15T03:08:47.627Z",
+              "WhenOpened": "2025-11-16T22:22:05.882Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ReservaRepository.cs",
-              "DocumentMoniker": "C:\\Users\\al_aybar\\Documents\\sistema-reserva\\reservas_api\\Repositories\\ReservaRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\ReservaRepository.cs",
-              "ToolTip": "C:\\Users\\al_aybar\\Documents\\sistema-reserva\\reservas_api\\Repositories\\ReservaRepository.cs",
-              "RelativeToolTip": "Repositories\\ReservaRepository.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwB0AAAANAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "IReservaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\al_aybar\\Documents\\sistema-reserva\\reservas_api\\Contracts\\IReservaRepository.cs",
+              "RelativeDocumentMoniker": "Contracts\\IReservaRepository.cs",
+              "ToolTip": "C:\\Users\\al_aybar\\Documents\\sistema-reserva\\reservas_api\\Contracts\\IReservaRepository.cs",
+              "RelativeToolTip": "Contracts\\IReservaRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-15T03:05:48.529Z",
+              "WhenOpened": "2025-11-15T03:34:07.073Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IReservaService.cs",
-              "DocumentMoniker": "C:\\Users\\al_aybar\\Documents\\sistema-reserva\\reservas_api\\Contracts\\IReservaService.cs",
-              "RelativeDocumentMoniker": "Contracts\\IReservaService.cs",
-              "ToolTip": "C:\\Users\\al_aybar\\Documents\\sistema-reserva\\reservas_api\\Contracts\\IReservaService.cs",
-              "RelativeToolTip": "Contracts\\IReservaService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "ReservaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\al_aybar\\Documents\\sistema-reserva\\reservas_api\\Repositories\\ReservaRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\ReservaRepository.cs",
+              "ToolTip": "C:\\Users\\al_aybar\\Documents\\sistema-reserva\\reservas_api\\Repositories\\ReservaRepository.cs",
+              "RelativeToolTip": "Repositories\\ReservaRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-15T03:03:59.823Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IUsuarioRepository.cs",
-              "DocumentMoniker": "C:\\Users\\al_aybar\\Documents\\sistema-reserva\\reservas_api\\Contracts\\IUsuarioRepository.cs",
-              "RelativeDocumentMoniker": "Contracts\\IUsuarioRepository.cs",
-              "ToolTip": "C:\\Users\\al_aybar\\Documents\\sistema-reserva\\reservas_api\\Contracts\\IUsuarioRepository.cs",
-              "RelativeToolTip": "Contracts\\IUsuarioRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-15T03:03:38.724Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-15T03:33:50.639Z"
             }
           ]
         }

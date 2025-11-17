@@ -9,7 +9,7 @@
         public DateTime FechaSalida { get; set; }
         public DateTime FechaLlegada { get; set; }
         public int Capacidad { get; set; }
-        public string Estado { get; set; }
+        public int Estado { get; set; }
 
     }
 }
