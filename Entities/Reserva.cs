@@ -6,7 +6,7 @@
         public int UsuarioId { get; set; }
         public int VueloId { get; set; }
         public DateTime FechaReserva { get; set; }
-        public string? Estado { get; set; }
+        public int Estado { get; set; }
 
     }
 }
